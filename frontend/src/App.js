@@ -18,7 +18,7 @@ class App extends Component {
 	}
 
 	getData = async () => {
-		const countries = (await axios.get('http://localhost:3000/api/v1/countries-cities')).data;
+		const countries = (await axios.get('/api/v1/countries-cities')).data;
 
 		this.setState({
 			data: {

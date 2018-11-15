@@ -73,7 +73,7 @@ class CurrentWeather extends Component {
 
 	getData = async () => {
 		const {country, city} = this.props;
-		const data = (await axios.get(`http://localhost:3000/api/v1/current/${country.code.toLowerCase()}/${city.toLowerCase()}`)).data;
+		const data = (await axios.get(`/api/v1/current/${country.code.toLowerCase()}/${city.toLowerCase()}`)).data;
 		this.setState({
 			data,
 			loaded: true,
