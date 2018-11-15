@@ -285,13 +285,14 @@ class Server {
         extended: true
       }));
       this.app.use(cors__WEBPACK_IMPORTED_MODULE_2___default()());
+      this.app.use(express__WEBPACK_IMPORTED_MODULE_3___default.a.static('public'));
       this.setRoutes();
       const http = new http__WEBPACK_IMPORTED_MODULE_4__["Server"](this.app);
       http.listen(this.port, this.onListen);
     });
 
     _defineProperty(this, "setRoutes", () => {
-      this.app.use('/', _controllers_home__WEBPACK_IMPORTED_MODULE_7__["default"]);
+      // this.app.use('/', Home);
       this.app.use('/api/v1', _controllers_api__WEBPACK_IMPORTED_MODULE_8__["default"]);
     });
 

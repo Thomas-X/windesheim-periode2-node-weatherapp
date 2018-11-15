@@ -45,13 +45,14 @@ class Server {
     start = async () => {
         this.app.use(bodyParser.urlencoded({ extended: true }));
         this.app.use(cors());
+        this.app.use(express.static('public'));
         this.setRoutes();
         const http = new HttpServer(this.app);
         http.listen(this.port, this.onListen);
     };
 
     setRoutes = () => {
-        this.app.use('/', Home);
+        // this.app.use('/', Home);
         this.app.use('/api/v1', Api);
     };
 }

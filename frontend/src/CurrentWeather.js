@@ -88,7 +88,7 @@ class CurrentWeather extends Component {
 			this.setState({
 				historyDataLoaded: 'loading'
 			});
-			const data = (await axios.get(`http://localhost:3000/api/v1/history/${country.code.toLowerCase()}/${city.toLowerCase()}/${currentYear}/${currentMonth}`)).data;
+			const data = (await axios.get(`/api/v1/history/${country.code.toLowerCase()}/${city.toLowerCase()}/${currentYear}/${currentMonth}`)).data;
 			this.setState({
 				historyData: data,
 				historyDataLoaded: 'loaded',
